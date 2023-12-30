@@ -1,5 +1,11 @@
+import Header from './Header';
+
 const App = () => {
-	return <div>Test</div>;
+	return (
+		<div className="w-screen">
+			<Header />
+		</div>
+	);
 };
 
 export default App;
