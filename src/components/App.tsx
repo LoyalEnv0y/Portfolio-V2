@@ -2,7 +2,7 @@ import Header from './Header';
 
 const App = () => {
 	return (
-		<div className="w-screen">
+		<div className="w-screen font-poppins">
 			<Header />
 		</div>
 	);

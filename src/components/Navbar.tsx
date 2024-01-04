@@ -45,7 +45,7 @@ const Navbar = () => {
 
 			<div className="flex gap-x-10 text-2xl">
 				{navbarLinks.map((link) => (
-					<a className="duration-200 [text-shadow:_0px_3px_2px_rgb(0_0_0_/_40%)] hover:-translate-y-1 hover:cursor-pointer">
+					<a className="duration-200 [text-shadow:_0px_2px_2px_rgb(0_0_0_/_40%)] hover:-translate-y-1 hover:cursor-pointer hover:[text-shadow:_0px_4px_4px_rgb(0_0_0_/_40%)]">
 						{link.titleTR}
 					</a>
 				))}
