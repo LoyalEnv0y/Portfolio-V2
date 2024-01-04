@@ -19,6 +19,8 @@ export default {
 				"primary-hover": "#E5E5E5",
 				"gStart-hover": "#8e44c3"
 			}
+
+			// ! TODO: Customize the Shadows! 
 		},
 	},
 	plugins: [],

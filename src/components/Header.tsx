@@ -19,7 +19,7 @@ const text = {
 
 const Header = () => {
 	return (
-		<div className="text-primary w-full">
+		<div className="w-full text-primary">
 			<div className="h-[calc(100vh-10rem)] bg-gradient-to-r from-[#A130F2] to-[#D32DE7]">
 				<Navbar />
 
@@ -33,12 +33,12 @@ const Header = () => {
 							dangerouslySetInnerHTML={{ __html: text.headerDesc.tr }}
 						/>
 
-						<button className="bg-primary text-secondary hover:bg-primary-hover group flex w-fit items-center gap-x-5 rounded-full px-7 py-3 shadow-xl">
+						<button className="group flex w-fit items-center gap-x-5 rounded-full bg-primary px-7 py-3 text-secondary shadow-xl hover:bg-primary-hover">
 							<p className="text-xl font-bold uppercase">
 								{text.cvBtnText.tr}
 							</p>
 
-							<div className="bg-gStart group-hover:bg-gStart-hover rounded-full p-3">
+							<div className="rounded-full bg-gStart p-3 group-hover:bg-gStart-hover">
 								<img
 									src="svg/Download.svg"
 									alt="download icon"
@@ -48,11 +48,19 @@ const Header = () => {
 						</button>
 					</div>
 
-					<img
-						src="svg/Illustration.svg"
-						alt="Coder Illustration"
-						className="mb-20 w-[40%]"
-					/>
+					<div className="w-full flex justify-center items-center relative">
+						<img
+							src="svg/Illustration.svg"
+							alt="Coder Illustration"
+							className="mb-20 w-full"
+						/>
+
+						<img src="svg/Floating-Editor.svg" alt="Floating-icon" className='absolute top-36 left-28 drop-shadow-xl w-28' />
+						<img src="svg/Floating-Orange.svg" alt="Floating-icon" className='absolute top-0 left-0 shadow' />
+						<img src="svg/Floating-Purple.svg" alt="Floating-icon" className='absolute top-0 left-0 shadow' />
+						<img src="svg/Floating-Search.svg" alt="Floating-icon" className='absolute top-0 left-0 shadow' />
+						<img src="svg/Floating-Terminal.svg" alt="Floating-icon" className='absolute top-0 left-0 shadow' />
+					</div>
 				</section>
 			</div>
 			<img src="/svg/waves.svg" alt="Header wave vector" className="w-full" />
