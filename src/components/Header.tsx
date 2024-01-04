@@ -8,7 +8,7 @@ const text = {
 
 	headerDesc: {
 		eng: '',
-		tr: 'Ben Çetin Tekin. Sürükleyici dijital deneyimler yaratmak ve güçlü, kullanıcı odaklı çözümler oluşturmak için kodlama becerilerimi uygulama konusunda son derece hevesli bir web geliştiricisiyim.',
+		tr: 'Ben <b>Çetin Tekin</b>. Sürükleyici dijital deneyimler yaratmak ve güçlü, kullanıcı odaklı çözümler oluşturmak için kodlama becerilerimi uygulama konusunda son derece hevesli bir web geliştiricisiyim.',
 	},
 
 	cvBtnText: {
@@ -28,9 +28,10 @@ const Header = () => {
 						<h1 className="font-aldrich text-8xl">
 							{text.headerTitle.tr}
 						</h1>
-						<p className="w-8/12 text-3xl font-extralight leading-10">
-							{text.headerDesc.tr}
-						</p>
+						<p
+							className="w-8/12 text-3xl font-extralight leading-10"
+							dangerouslySetInnerHTML={{ __html: text.headerDesc.tr }}
+						/>
 
 						<button className="bg-primary text-secondary hover:bg-primary-hover group flex w-fit items-center gap-x-5 rounded-full px-7 py-3 shadow-xl">
 							<p className="text-xl font-bold uppercase">
@@ -50,7 +51,7 @@ const Header = () => {
 					<img
 						src="svg/Illustration.svg"
 						alt="Coder Illustration"
-						className="w-[40%] mb-20"
+						className="mb-20 w-[40%]"
 					/>
 				</section>
 			</div>
