@@ -27,7 +27,7 @@ const navbarLinks = [
 	},
 	{
 		id: uuid(),
-		titleTR: 'Sertificalar',
+		titleTR: 'Sertifikalar',
 		titleENG: 'Certificates',
 		url: '',
 	},
