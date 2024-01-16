@@ -17,10 +17,22 @@ export default {
 				"gStart": "#A02FF2",
 				"gEnd": "#D32CE6",
 				"primary-hover": "#E5E5E5",
-				"gStart-hover": "#8e44c3"
-			}
+				"gStart-hover": "#992de6"
+			},
 
-			// ! TODO: Customize the Shadows! 
+			dropShadow: {
+				'c-sm': "0 2px 1px rgba(0, 0, 0, 0.25)",
+				'c': "0 4px 2px rgba(0, 0, 0, 0.25)",
+				'c-lg': "0 6px 4px rgba(0, 0, 0, 0.25)",
+				'c-xl': "0 8px 3px rgba(0, 0, 0, 0.25)",
+			},
+
+			boxShadow: {
+				'c-sm': "0 2px 1px rgba(0, 0, 0, 0.25)",
+				'c': "0 4px 2px rgba(0, 0, 0, 0.25)",
+				'c-lg': "0 6px 4px rgba(0, 0, 0, 0.25)",
+				'c-xl': "0 8px 3px rgba(0, 0, 0, 0.25)",
+			}
 		},
 	},
 	plugins: [],
