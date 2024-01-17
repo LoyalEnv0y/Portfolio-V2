@@ -51,23 +51,52 @@ const navbarLinks = [
 	},
 ];
 
-const Navbar = () => {
-	const [menuIsOpen, setMenuIsOpen] = useState(false);
+const iconVariants = {
+	enter: {
+		rotate: 180,
+	},
 
-	const menuClass = twMerge(
-		classNames(
-			'absolute right-12 top-8 z-10 h-0 w-0 rounded-[100%] bg-primary duration-150',
-			{
-				'right-0 top-0 flex h-screen w-screen rounded-none': menuIsOpen,
-			}
-		)
-	);
+	center: {
+		rotate: 0,
+	},
+
+	exit: {
+		rotate: 0,
+	},
+};
+
+const menuVariants = {
+	enter: {
+		width: '0px',
+		height: '0px',
+		borderRadius: '100%',
+	},
+
+	center: {
+		width: '100vw',
+		height: '100vh',
+		borderRadius: '0%',
+		top: 0,
+		right: 0,
+	},
+
+	exit: {
+		width: '0px',
+		height: '0px',
+		borderRadius: '100%',
+		top: '30px',
+		right: '45px',
+	},
+};
+
+const Navbar = () => {
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 	const menuBtnClass = twMerge(
 		classNames(
 			'z-20 flex h-14 w-14 items-center justify-center rounded-full bg-primary shadow-c lg:hidden text-secondary',
 			{
-				'shadow-none': menuIsOpen,
+				'shadow-none': isMenuOpen,
 			}
 		)
 	);
@@ -78,36 +107,59 @@ const Navbar = () => {
 				<img src="/svg/Logo.svg" alt="Site Logo" className="h-full " />
 			</a>
 
-			<button
-				className={menuBtnClass}
-				onClick={() => setMenuIsOpen(!menuIsOpen)}
-			>
-				{menuIsOpen ? (
-					<AnimatePresence mode="wait">
+			<AnimatePresence>
+				<button
+					className={menuBtnClass}
+					onClick={() => setIsMenuOpen(!isMenuOpen)}
+				>
+					{isMenuOpen ? (
 						<motion.div
-							key="aaaa"
-							initial={{ rotate: 180 }}
-							animate={{ rotate: 0 }}
-							exit={{ rotate: 0 }}
+							key="closeBtn"
+							variants={iconVariants}
+							initial="enter"
+							animate="center"
+							exit="exit"
+							transition={{
+								duration: 0.15,
+								type: 'spring',
+							}}
 						>
-							<GrClose className="h-7 w-7" />
+							<GrClose className="h-6 w-6" />
 						</motion.div>
-					</AnimatePresence>
-				) : (
-					<AnimatePresence mode="wait">
+					) : (
 						<motion.div
-							key="bb"
-							initial={{ rotate: 180 }}
-							animate={{ rotate: 0 }}
-							exit={{ rotate: 0 }}
+							key="openBtn"
+							variants={iconVariants}
+							initial="enter"
+							animate="center"
+							exit="exit"
+							transition={{
+								duration: 0.15,
+								type: 'spring',
+							}}
 						>
 							<IoIosMenu className="h-8 w-8" />
 						</motion.div>
-					</AnimatePresence>
-				)}
-			</button>
+					)}
+				</button>
+			</AnimatePresence>
 
-			<div className={menuClass} onClick={() => setMenuIsOpen(false)}></div>
+			<AnimatePresence>
+				{isMenuOpen && (
+					<motion.div
+						className="absolute right-7 top-5 z-10 rounded-[100%] bg-primary"
+						key="mobileMenu"
+						variants={menuVariants}
+						initial="enter"
+						animate="center"
+						exit="exit"
+						transition={{
+							duration: 0.15,
+						}}
+						onClick={() => setIsMenuOpen(false)}
+					/>
+				)}
+			</AnimatePresence>
 
 			<div className="hidden gap-x-5 text-[clamp(1rem,1.3vw,2rem)] lg:flex xl:gap-x-10">
 				{navbarLinks.map((link) => (
