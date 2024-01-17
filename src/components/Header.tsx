@@ -1,5 +1,3 @@
-import Navbar from './Navbar';
-
 const text = {
 	headerTitle: {
 		eng: '<Hello />',
@@ -20,9 +18,7 @@ const text = {
 const Header = () => {
 	return (
 		<header className="w-full text-primary">
-			<div className=" bg-gradient-to-r from-[#A130F2] to-[#D32DE7]">
-				<Navbar />
-
+			<div className="bg-gradient-to-r from-[#A130F2] to-[#D32DE7]">
 				<div className="flex w-full flex-col items-center gap-y-10 px-5 py-10 md:px-10 lg:px-20 xl:px-32 2xl:flex-row 2xl:justify-between">
 					<section className="flex w-[90%] max-w-3xl flex-col gap-y-3">
 						<h1 className="font-aldrich text-[clamp(2.25rem,10vw,6rem)]">
@@ -82,7 +78,7 @@ const Header = () => {
 			<img
 				src="/svg/waves.svg"
 				alt="Header wave vector"
-				className="-mt-0.5 h-16 w-full sm:h-32 lg:h-40"
+				className=" h-16 w-full sm:h-32 lg:h-40"
 			/>
 		</header>
 	);

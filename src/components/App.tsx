@@ -1,8 +1,10 @@
 import Header from './Header';
+import Navbar from './Navbar';
 
 const App = () => {
 	return (
-		<div className="w-screen font-poppins">
+		<div className="font-poppins">
+			<Navbar />
 			<Header />
 		</div>
 	);
