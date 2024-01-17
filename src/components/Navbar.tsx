@@ -55,7 +55,7 @@ const Navbar = () => {
 
 	const menuClass = twMerge(
 		classNames(
-			'absolute right-10 top-5 z-10 h-0 w-0 rounded-[100%] bg-primary duration-100',
+			'absolute right-10 top-5 z-10 h-0 w-0 rounded-[100%] bg-primary duration-200',
 			{
 				'right-0 top-0 flex h-screen w-screen rounded-none': menuIsOpen,
 			}
@@ -72,7 +72,7 @@ const Navbar = () => {
 	);
 
 	return (
-		<div className="sticky top-0 z-10 flex h-20 w-full items-center justify-between bg-gradient-to-r from-[#A130F2] to-[#D32DE7] px-5 py-1 text-primary shadow-lg md:px-10 lg:px-20 xl:px-32">
+		<div className="sticky top-0 z-10 flex h-20 w-full items-center justify-between bg-gradient-to-r backdrop-blur-sm from-gStart/90 to-gEnd/90 px-5 py-1 text-primary shadow-md md:px-10 lg:px-20 xl:px-32">
 			<a href="/" className="h-full">
 				<img src="/svg/Logo.svg" alt="Site Logo" className="h-full" />
 			</a>

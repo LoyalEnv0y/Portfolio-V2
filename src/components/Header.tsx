@@ -17,8 +17,8 @@ const text = {
 
 const Header = () => {
 	return (
-		<header className="w-full text-primary">
-			<div className="bg-gradient-to-r from-[#A130F2] to-[#D32DE7]">
+		<header className="w-full text-primary relative -top-20">
+			<div className="bg-gradient-to-r from-[#A130F2] to-[#D32DE7] pt-20">
 				<div className="flex w-full flex-col items-center gap-y-10 px-5 py-10 md:px-10 lg:px-20 xl:px-32 2xl:flex-row 2xl:justify-between">
 					<section className="flex w-[90%] max-w-3xl flex-col gap-y-3">
 						<h1 className="font-aldrich text-[clamp(2.25rem,10vw,6rem)]">
@@ -46,7 +46,7 @@ const Header = () => {
 						</div>
 					</section>
 
-					<section className="relative aspect-square w-[clamp(20rem,65vw,40rem)] select-none bg-[url('svg/Illustration.svg')] bg-contain bg-center bg-no-repeat">
+					<section className="relative aspect-square w-[clamp(18rem,65vw,40rem)] select-none bg-[url('svg/Illustration.svg')] bg-contain bg-center bg-no-repeat">
 						<img
 							src="svg/Floating-Editor.svg"
 							alt="Floating-icon"
