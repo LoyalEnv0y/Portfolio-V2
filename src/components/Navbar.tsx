@@ -4,6 +4,7 @@ import { IoIosMenu } from 'react-icons/io';
 import { useState } from 'react';
 import classNames from 'classnames';
 import { twMerge } from 'tailwind-merge';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const navbarLinks = [
 	{
@@ -55,7 +56,7 @@ const Navbar = () => {
 
 	const menuClass = twMerge(
 		classNames(
-			'absolute right-10 top-5 z-10 h-0 w-0 rounded-[100%] bg-primary duration-200',
+			'absolute right-12 top-8 z-10 h-0 w-0 rounded-[100%] bg-primary duration-150',
 			{
 				'right-0 top-0 flex h-screen w-screen rounded-none': menuIsOpen,
 			}
@@ -64,7 +65,7 @@ const Navbar = () => {
 
 	const menuBtnClass = twMerge(
 		classNames(
-			'z-20 flex h-14 w-14 items-center justify-center rounded-full bg-primary shadow-c lg:hidden',
+			'z-20 flex h-14 w-14 items-center justify-center rounded-full bg-primary shadow-c lg:hidden text-secondary',
 			{
 				'shadow-none': menuIsOpen,
 			}
@@ -72,9 +73,9 @@ const Navbar = () => {
 	);
 
 	return (
-		<div className="sticky top-0 z-10 flex h-20 w-full items-center justify-between bg-gradient-to-r backdrop-blur-sm from-gStart/90 to-gEnd/90 px-5 py-1 text-primary shadow-md md:px-10 lg:px-20 xl:px-32">
+		<div className="sticky top-0 z-10 flex h-20 w-full items-center justify-between bg-gradient-to-r from-gStart/90 to-gEnd/80 px-5 py-1 text-primary shadow-md backdrop-blur-sm md:px-10 lg:px-20 xl:px-32">
 			<a href="/" className="h-full">
-				<img src="/svg/Logo.svg" alt="Site Logo" className="h-full" />
+				<img src="/svg/Logo.svg" alt="Site Logo" className="h-full " />
 			</a>
 
 			<button
@@ -82,9 +83,27 @@ const Navbar = () => {
 				onClick={() => setMenuIsOpen(!menuIsOpen)}
 			>
 				{menuIsOpen ? (
-					<GrClose className="h-7 w-7 text-secondary" />
+					<AnimatePresence mode="wait">
+						<motion.div
+							key="aaaa"
+							initial={{ rotate: 180 }}
+							animate={{ rotate: 0 }}
+							exit={{ rotate: 0 }}
+						>
+							<GrClose className="h-7 w-7" />
+						</motion.div>
+					</AnimatePresence>
 				) : (
-					<IoIosMenu className="h-8 w-8 text-secondary" />
+					<AnimatePresence mode="wait">
+						<motion.div
+							key="bb"
+							initial={{ rotate: 180 }}
+							animate={{ rotate: 0 }}
+							exit={{ rotate: 0 }}
+						>
+							<IoIosMenu className="h-8 w-8" />
+						</motion.div>
+					</AnimatePresence>
 				)}
 			</button>
 
