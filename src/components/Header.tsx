@@ -1,3 +1,5 @@
+import FloatingImage from './FloatingIcon';
+
 const text = {
 	headerTitle: {
 		eng: '<Hello />',
@@ -17,7 +19,7 @@ const text = {
 
 const Header = () => {
 	return (
-		<header className="w-full text-primary relative -top-20">
+		<header className="relative -top-20 w-full text-primary">
 			<div className="bg-gradient-to-r from-[#A130F2] to-[#D32DE7] pt-20">
 				<div className="flex w-full flex-col items-center gap-y-10 px-5 py-10 md:px-10 lg:px-20 xl:px-32 2xl:flex-row 2xl:justify-between">
 					<section className="flex w-[90%] max-w-3xl flex-col gap-y-3">
@@ -30,7 +32,7 @@ const Header = () => {
 						/>
 
 						<div className="group mt-4 w-fit self-start">
-							<button className="flex w-fit items-center gap-x-5 rounded-full bg-primary px-4 py-2 text-secondary shadow-c duration-200 group-hover:-translate-y-1 group-hover:bg-primary-hover group-hover:shadow-c-lg lg:px-5 lg:py-3 lg:shadow-c-lg lg:group-hover:shadow-c-xl">
+							<button className="flex w-fit items-center gap-x-5 rounded-full bg-primary px-4 py-2 text-secondary shadow-c duration-200 group-hover:-translate-y-0.5 group-hover:bg-primary-hover group-hover:shadow-c-lg lg:px-5 lg:py-3 lg:shadow-c-lg lg:group-hover:shadow-c-xl">
 								<p className="font-bold uppercase lg:text-xl lg:font-semibold xl:text-2xl">
 									{text.cvBtnText.tr}
 								</p>
@@ -47,30 +49,30 @@ const Header = () => {
 					</section>
 
 					<section className="relative aspect-square w-[clamp(18rem,65vw,40rem)] select-none bg-[url('svg/Illustration.svg')] bg-contain bg-center bg-no-repeat">
-						<img
+						<FloatingImage
 							src="svg/Floating-Editor.svg"
-							alt="Floating-icon"
-							className="absolute left-[24%] top-[15%] w-[20%] drop-shadow-c"
+							x={40}
+							y={40}
+							duration={3000}
+							className="left-[24%] top-[15%] w-[20%]"
 						/>
-						<img
+						<FloatingImage
 							src="svg/Floating-Search.svg"
-							alt="Floating-icon"
-							className="absolute left-[20%] top-[10%] w-[12%] drop-shadow-c-xl"
+							className="left-[20%] top-[10%] w-[12%] drop-shadow-c-xl"
+							duration={1500}
 						/>
-						<img
+						<FloatingImage
 							src="svg/Floating-Orange.svg"
-							alt="Floating-icon"
-							className="absolute left-[53%] top-[12%] w-[17%] drop-shadow-c"
+							className="left-[53%] top-[12%] w-[17%]"
 						/>
-						<img
+						<FloatingImage
 							src="svg/Floating-Purple.svg"
-							alt="Floating-icon"
-							className="absolute left-[60%] top-[28%] w-[9%] drop-shadow-c"
+							className="left-[60%] top-[28%] w-[9%]"
+							duration={1000}
 						/>
-						<img
+						<FloatingImage
 							src="svg/Floating-Terminal.svg"
-							alt="Floating-icon"
-							className="absolute left-[74%] top-[38%] w-[15%] drop-shadow-c"
+							className="left-[74%] top-[38%] w-[15%]"
 						/>
 					</section>
 				</div>
