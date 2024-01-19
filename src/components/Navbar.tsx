@@ -107,6 +107,10 @@ const Navbar = () => {
 				<img src="/svg/Logo.svg" alt="Site Logo" className="h-full " />
 			</a>
 
+			{/* 
+			//? What is this?
+			The top left menu button that appears on devices that are narrower than 1024 pixels. 
+			*/}
 			<AnimatePresence>
 				<button
 					className={menuBtnClass}
@@ -144,6 +148,15 @@ const Navbar = () => {
 				</button>
 			</AnimatePresence>
 
+			{/* 
+			//? What is this?
+			This is the white background that gets enlarged when the user clicks on the navbar menu button.
+			
+			//? Why is it here?
+			The background is here because the navbar menu button needed to stay in place. I could have done
+			so that the background of the button would be the enlarging part. I tried that and it was more jankier
+			than this way.
+			*/}
 			<AnimatePresence mode="wait">
 				{isMenuOpen && (
 					<motion.div
@@ -160,6 +173,14 @@ const Navbar = () => {
 				)}
 			</AnimatePresence>
 
+			{/* 
+			//? What is this?
+			This is the div that is put on top of the white background to display the navlinks
+
+			//? Why is it here?
+			It is here because the fading and moving animations needed to look natural and independent from
+			the white background. 
+			*/}
 			<AnimatePresence>
 				{isMenuOpen && (
 					<motion.div
@@ -182,7 +203,7 @@ const Navbar = () => {
 									delay: i / 20,
 								}}
 							>
-								<div className="mr-5 h-2 w-2 rounded-sm bg-gEnd duration-150 group-hover:h-5 group-hover:w-5 group-hover:rotate-45"></div>
+								<div className="mr-5 h-2 w-2 rounded-sm bg-gEnd duration-150 group-hover:h-3 group-hover:w-3 group-hover:rotate-45"></div>
 								<p
 									className="text-[2.7rem] font-semibold tracking-wide text-transparent duration-150 group-hover:translate-x-4 group-hover:text-black"
 									style={{ WebkitTextStroke: '2px black' }}
