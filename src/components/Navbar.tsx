@@ -144,10 +144,10 @@ const Navbar = () => {
 				</button>
 			</AnimatePresence>
 
-			<AnimatePresence>
+			<AnimatePresence mode="wait">
 				{isMenuOpen && (
 					<motion.div
-						className="absolute right-7 top-5 z-10 rounded-[100%] bg-primary"
+						className="absolute right-7 top-5 z-10 flex flex-col items-center justify-center rounded-[100%] bg-primary text-secondary"
 						key="mobileMenu"
 						variants={menuVariants}
 						initial="enter"
@@ -156,8 +156,42 @@ const Navbar = () => {
 						transition={{
 							duration: 0.15,
 						}}
-						onClick={() => setIsMenuOpen(false)}
-					/>
+					></motion.div>
+				)}
+			</AnimatePresence>
+
+			<AnimatePresence>
+				{isMenuOpen && (
+					<motion.div
+						className="absolute left-0 top-0 z-10 flex h-screen w-full flex-col items-center justify-center overflow-hidden border"
+						key="MobileNavMenuTop"
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 100 }}
+						exit={{ opacity: 0 }}
+					>
+						{navbarLinks.map((link, i) => (
+							<motion.a
+								// href={link.url}
+								className="group flex h-20 w-80 cursor-pointer items-center"
+								key={link.id}
+								initial={{ x: -1000 }}
+								animate={{ x: 0 }}
+								transition={{
+									duration: 0.5,
+									type: 'spring',
+									delay: i / 20,
+								}}
+							>
+								<div className="mr-5 h-2 w-2 rounded-sm bg-gEnd duration-150 group-hover:h-5 group-hover:w-5 group-hover:rotate-45"></div>
+								<p
+									className="text-[2.7rem] font-semibold tracking-wide text-transparent duration-150 group-hover:translate-x-4 group-hover:text-black"
+									style={{ WebkitTextStroke: '2px black' }}
+								>
+									{link.titleTR}
+								</p>
+							</motion.a>
+						))}
+					</motion.div>
 				)}
 			</AnimatePresence>
 
