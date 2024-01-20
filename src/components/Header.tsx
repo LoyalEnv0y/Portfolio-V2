@@ -32,19 +32,24 @@ const Header = () => {
 						/>
 
 						<div className="group mt-4 w-fit self-start">
-							<button className="flex w-fit items-center gap-x-5 rounded-full bg-primary px-4 py-2 text-secondary shadow-c duration-200 group-hover:-translate-y-0.5 group-hover:bg-primary-hover group-hover:shadow-c-lg lg:px-5 lg:py-3 lg:shadow-c-lg lg:group-hover:shadow-c-xl">
-								<p className="font-bold uppercase lg:text-xl lg:font-semibold xl:text-2xl">
-									{text.cvBtnText.tr}
-								</p>
+							<a
+								href="Cetin-Tekin-CV-TR.pdf"
+								download={'Çetin-Tekin-CV'}
+							>
+								<button className="flex w-fit items-center gap-x-5 rounded-full bg-primary px-4 py-2 text-secondary shadow-c duration-200 group-hover:-translate-y-0.5 group-hover:bg-primary-hover group-hover:shadow-c-lg lg:px-5 lg:py-3 lg:shadow-c-lg lg:group-hover:shadow-c-xl">
+									<p className="font-bold uppercase lg:text-xl lg:font-semibold xl:text-2xl">
+										{text.cvBtnText.tr}
+									</p>
 
-								<div className="rounded-full bg-gStart p-2 group-hover:bg-gStart-hover lg:p-3 xl:p-4">
-									<img
-										src="svg/Download.svg"
-										alt="download icon"
-										className="w-5 lg:w-6 xl:w-8"
-									/>
-								</div>
-							</button>
+									<div className="rounded-full bg-gStart p-2 group-hover:bg-gStart-hover lg:p-3 xl:p-4">
+										<img
+											src="svg/Download.svg"
+											alt="download icon"
+											className="w-5 lg:w-6 xl:w-8"
+										/>
+									</div>
+								</button>
+							</a>
 						</div>
 					</section>
 
