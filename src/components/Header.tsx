@@ -53,7 +53,7 @@ const Header = () => {
 						</div>
 					</section>
 
-					<section className="relative aspect-square w-[clamp(18rem,65vw,40rem)] select-none bg-[url('svg/Illustration.svg')] bg-contain bg-center bg-no-repeat">
+					<section className="relative aspect-square w-[clamp(18rem,65vw,40rem)] select-none bg-[url('/svg/Illustration.svg')] bg-contain bg-center bg-no-repeat">
 						<FloatingImage
 							src="svg/Floating-Editor.svg"
 							x={40}
